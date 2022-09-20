@@ -382,7 +382,6 @@ class FpledgeWaitPage(WaitPage):
 class estimate_ex_ante_review(Page):
     form_model = "player"
     form_fields = ["ex_ante1", "ex_ante2", "ex_ante3", "ex_ante4", "ex_ante5", "estimate"]
-    # 後から推測は計算する
     @staticmethod
     def get_timeout_seconds(player):
         if player.Pis_dropout:
@@ -493,11 +492,11 @@ class mid_term_scontribution(Page):
             participant.is_dropout = player.Pis_dropout
     @staticmethod    
     def error_message(player, values):
-        if values["second_contribution_red"] + player.first_contribution_red > C.ENDOWMENT_RED:
+        if values["second_contribution_red"] + player.first_contribution_red >= C.ENDOWMENT_RED +1:
             return "貢献の合計が所持している赤のチップの枚数を超えています"
-        elif values["second_contribution_black"] + player.first_contribution_black > C.ENDOWMENT_BLACK:
+        elif values["second_contribution_black"] + player.first_contribution_black >= C.ENDOWMENT_BLACK+1:
             return "貢献の合計が所持している黒のチップの枚数を超えています"
-
+        #この函数の動作が明確におかしい
 
 class ScontributionWaitPage(WaitPage):
     after_all_players_arrive = set_Second_contribution
