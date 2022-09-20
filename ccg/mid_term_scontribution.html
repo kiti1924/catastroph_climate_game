@@ -1,0 +1,55 @@
+
+{{ block title }}
+中間評価の公開と個人貢献の決定
+{{ endblock }}
+
+{{ block content }}
+<details>
+    <summary><strong>実験ゲームの説明</strong></summary>
+    {{ include C.INSTRUCTIONS_TEMPLATE }}
+</details>
+<p>採択された全体目標は{{  group.Target  }}です。</p>
+<table border="5" rules="all" style="text-align:center">
+    <colgroup span="4"></colgroup>
+    <tr>
+        <th>参加者番号</th>
+        <th>参加者1</th>
+        <th>参加者2</th>
+        <th>参加者3</th>
+        <th>参加者4</th>
+        <th>参加者5</th>
+    </tr>
+    <tr>
+        <td>受けた評価の平均値</td>
+        <td>{{  group.Midterm1  }}</td>
+        <td>{{  group.Midterm2  }}</td>
+        <td>{{  group.Midterm3  }}</td>
+        <td>{{  group.Midterm4  }}</td>
+        <td>{{  group.Midterm5  }}</td>
+    </tr>
+    <tr>
+        <td>既に貢献した赤のチップの枚数</td>
+        <td>{{  group.fcontribution1_red  }}</td>
+        <td>{{  group.fcontribution2_red  }}</td>
+        <td>{{  group.fcontribution3_red  }}</td>
+        <td>{{  group.fcontribution4_red  }}</td>
+        <td>{{  group.fcontribution5_red  }}</td>
+    </tr>
+    <tr>
+        <td>既に貢献した黒のチップの枚数</td>
+        <td>{{  group.fcontribution1_black  }}</td>
+        <td>{{  group.fcontribution2_black  }}</td>
+        <td>{{  group.fcontribution3_black  }}</td>
+        <td>{{  group.fcontribution4_black  }}</td>
+        <td>{{  group.fcontribution5_black  }}</td>
+    </tr>
+</table>
+<p>評価の結果は以上の通りです。</p>
+<p>評価の最大値は{{  Midterm_MAX  }}、最小値は{{  Midterm_min  }}でした。</p>
+
+<p>続いて、2回目に<b>貢献</b>する値を指定してください。</p>
+<p>※誓約に従う必要はありませんが、<b>貢献</b>した量は<b>全員に公開</b>され、評価されます。</p>
+
+{{ formfields }}
+{{ next_button }}
+{{ endblock }}

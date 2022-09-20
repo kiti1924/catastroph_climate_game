@@ -1,0 +1,46 @@
+
+{{ block title }}
+貢献の公開と評価
+{{ endblock }}
+
+{{ block content }}
+<details>
+    <summary><strong>実験ゲームの説明</strong></summary>
+    {{ include C.INSTRUCTIONS_TEMPLATE }}
+</details>
+<p>採択された全体目標は{{  group.Target  }}です。</p>
+<table border="5" rules="all" style="text-align:center">
+    <colgroup span="4"></colgroup>
+    <tr>
+        <th>参加者番号</th>
+        <th>参加者1</th>
+        <th>参加者2</th>
+        <th>参加者3</th>
+        <th>参加者4</th>
+        <th>参加者5</th>
+    </tr>
+    <tr>
+        <td>貢献した赤のチップの枚数</td>
+        <td>{{  group.fcontribution1_red  }}</td>
+        <td>{{  group.fcontribution2_red  }}</td>
+        <td>{{  group.fcontribution3_red  }}</td>
+        <td>{{  group.fcontribution4_red  }}</td>
+        <td>{{  group.fcontribution5_red  }}</td>
+    </tr>
+    <tr>
+        <td>貢献した黒のチップの枚数</td>
+        <td>{{  group.fcontribution1_black  }}</td>
+        <td>{{  group.fcontribution2_black  }}</td>
+        <td>{{  group.fcontribution3_black  }}</td>
+        <td>{{  group.fcontribution4_black  }}</td>
+        <td>{{  group.fcontribution5_black  }}</td>
+    </tr>
+</table>
+<p>したがって、{{  group.Fcontribution  }}が現在のグループの合計貢献です。</p>
+<p>この場合の損失発生の可能性は{{  group.prob_Fcontribution  }}%です。</p>
+
+<p>続いて、各参加者の1度目の<b>貢献</b>に対する評価を指定してください。</p>
+
+{{ formfields }}
+{{ next_button }}
+{{ endblock }}

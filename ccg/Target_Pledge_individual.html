@@ -1,0 +1,37 @@
+
+{{ block title }}
+    全体目標の決定と誓約
+{{ endblock }}
+
+{{ block content }}
+    <details>
+        <summary><strong>実験ゲームの説明</strong></summary>
+        {{ include C.INSTRUCTIONS_TEMPLATE }}
+    </details>
+    <table border="5" rules="all" style="text-align:center">
+        <colgroup span="4"></colgroup>
+        <tr>
+            <th>参加者番号</th>
+            <th>参加者1</th>
+            <th>参加者2</th>
+            <th>参加者3</th>
+            <th>参加者4</th>
+            <th>参加者5</th>
+        </tr>
+        <tr>
+            <td>全体目標の提案</td>
+            <td>{{  group.target1  }}</td>
+            <td>{{  group.target2  }}</td>
+            <td>{{  group.target3  }}</td>
+            <td>{{  group.target4  }}</td>
+            <td>{{  group.target5  }}</td>
+        </tr>
+    </table>
+    <p>したがって、{{  group.Target  }}が目標に採択されました。</p>
+    <p>この場合の損失発生の可能性は{{  group.prob_Target  }}%です。</p>
+    <p>続いて、貢献額の<b>誓約</b>として、表明する貢献チップ枚数を指定してください。</p>
+    <p>(実際の貢献ステップで従う必要はありません。)</p>
+
+    {{ formfields }}
+    {{ next_button }}
+{{ endblock }}

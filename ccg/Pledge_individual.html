@@ -1,0 +1,13 @@
+
+{{ block title }}
+    ルールの確認
+{{ endblock }}
+
+{{ block content }}
+    <details>
+        <summary><strong>実験ゲームの説明</strong></summary>
+        {{ include C.INSTRUCTIONS_TEMPLATE }}
+    </details>
+    {{ formfields }}
+    {{ next_button }}
+{{ endblock }}

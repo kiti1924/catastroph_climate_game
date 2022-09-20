@@ -1,0 +1,84 @@
+
+{{ block title }}
+最終評価の公開
+{{ endblock }}
+
+{{ block content }}
+<details>
+    <summary><strong>実験ゲームの説明</strong></summary>
+    {{ include C.INSTRUCTIONS_TEMPLATE }}
+</details>
+<p>採択された全体目標は{{  group.Target  }}です。</p>
+<table border="5" rules="all" style="text-align:center">
+    <colgroup span="4"></colgroup>
+    <tr>
+        <th>参加者番号</th>
+        <th>参加者1</th>
+        <th>参加者2</th>
+        <th>参加者3</th>
+        <th>参加者4</th>
+        <th>参加者5</th>
+    </tr>
+    <tr>
+        <td>受けた評価の平均値</td>
+        <td>{{  group.Expost1  }}</td>
+        <td>{{  group.Expost2  }}</td>
+        <td>{{  group.Expost3  }}</td>
+        <td>{{  group.Expost4  }}</td>
+        <td>{{  group.Expost5  }}</td>
+    </tr>
+    <tr>
+        <td>1回目に貢献した赤のチップの枚数</td>
+        <td>{{  group.fcontribution1_red  }}</td>
+        <td>{{  group.fcontribution2_red  }}</td>
+        <td>{{  group.fcontribution3_red  }}</td>
+        <td>{{  group.fcontribution4_red  }}</td>
+        <td>{{  group.fcontribution5_red  }}</td>
+    </tr>
+    <tr>
+        <td>1回目に貢献した黒のチップの枚数</td>
+        <td>{{  group.fcontribution1_black  }}</td>
+        <td>{{  group.fcontribution2_black  }}</td>
+        <td>{{  group.fcontribution3_black  }}</td>
+        <td>{{  group.fcontribution4_black  }}</td>
+        <td>{{  group.fcontribution5_black  }}</td>
+    </tr>
+    <tr>
+        <td>2回目に貢献した赤のチップの枚数</td>
+        <td>{{  group.scontribution1_red  }}</td>
+        <td>{{  group.scontribution2_red  }}</td>
+        <td>{{  group.scontribution3_red  }}</td>
+        <td>{{  group.scontribution4_red  }}</td>
+        <td>{{  group.scontribution5_red  }}</td>
+    </tr>
+    <tr>
+        <td>2回目に貢献した黒のチップの枚数</td>
+        <td>{{  group.scontribution1_black  }}</td>
+        <td>{{  group.scontribution2_black  }}</td>
+        <td>{{  group.scontribution3_black  }}</td>
+        <td>{{  group.scontribution4_black  }}</td>
+        <td>{{  group.scontribution5_black  }}</td>
+    </tr>
+    <tr>
+        <td>貢献したチップの合計枚数</td>
+        <td>{{  group.contribution1  }}</td>
+        <td>{{  group.contribution2  }}</td>
+        <td>{{  group.contribution3  }}</td>
+        <td>{{  group.contribution4  }}</td>
+        <td>{{  group.contribution5  }}</td>
+    </tr>
+</table>
+<p>評価の結果は以上の通りです。</p>
+<p>評価の最大値は{{  Expost_MAX  }}、最小値は{{  Expost_min  }}でした。</p>
+<p>また、あなたが行った他参加者の平均貢献額の推定は{{  player.estimate  }}でしたが、</p>
+<p>実際の他参加者の平均貢献額は{{  player.avg_contribution  }}でした。</p>
+{{  if participant.hit_estimate  }}
+    <p>あなたの推測は的中しました。</p>
+{{  else  }}
+    <p>あなたは不的中でした。</p>
+{{  endif  }}
+<p>次がゲームの最終ステップです。</p>
+<p>最後にホイールでの損失発生の決定を行います。</p></p>
+
+{{ next_button }}
+{{ endblock }}
