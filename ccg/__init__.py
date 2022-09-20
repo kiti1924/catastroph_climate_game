@@ -496,7 +496,7 @@ class mid_term_scontribution(Page):
             return "貢献の合計が所持している赤のチップの枚数を超えています"
         elif values["second_contribution_black"] + player.first_contribution_black >= C.ENDOWMENT_BLACK+1:
             return "貢献の合計が所持している黒のチップの枚数を超えています"
-        #この函数の動作が明確におかしい
+        #この+1と>=がないと動かない(なぜ？)
 
 class ScontributionWaitPage(WaitPage):
     after_all_players_arrive = set_Second_contribution

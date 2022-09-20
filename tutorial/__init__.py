@@ -57,11 +57,11 @@ class experiment_test(Page):
     form_fields = ['quiz1', 'quiz2']
 
     @staticmethod
-    def error_message(player: Player, values):
-        solutions = dict(quiz1=76, quiz2=28.75)
-
-        if values != solutions:
-            return "答えが正しくありません"
+    def error_message(player, values):
+        if values["quiz1"] != 76:
+            return " 1番目の答えが正しくありません。"
+        elif values["quiz2"] != 28.75:
+            return " 2番目の答えが正しくありません。"
     
 
 
