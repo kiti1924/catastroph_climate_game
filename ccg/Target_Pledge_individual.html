@@ -5,7 +5,7 @@
 
 {{ block content }}
     <details>
-        <summary><strong>実験ゲームの説明</strong></summary>
+        <summary><strong><font size="5" color="blue">実験ゲームの説明</font></strong></summary>
         {{ include C.INSTRUCTIONS_TEMPLATE }}
     </details>
     <table border="5" rules="all" style="text-align:center">
@@ -27,10 +27,11 @@
             <td>{{  group.target5  }}</td>
         </tr>
     </table>
-    <p>したがって、{{  group.Target  }}が目標に採択されました。</p>
-    <p>この場合の損失発生の可能性は{{  group.prob_Target  }}%です。</p>
-    <p>続いて、貢献額の<b>誓約</b>として、表明する合計の貢献チップ枚数を指定してください。</p>
-    <p>(実際の貢献ステップで従う必要はありません。)</p>
+    <p>参加者 {{  player.id_in_group  }}さん<br>
+        したがって、{{  group.Target  }}が目標に採択されました。<br>
+        この場合の損失発生の可能性は{{  group.prob_Target  }}%です。<br></p>
+    <p>次に<b>誓約</b>として、自身の貢献予定チップ枚数を指定してください。<br>
+        この誓約に強制力はありませんが、全員確認することができます。</p>
 
     {{ formfields }}
     {{ next_button }}

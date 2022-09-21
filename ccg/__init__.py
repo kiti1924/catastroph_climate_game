@@ -1,4 +1,3 @@
-from re import A
 from otree.api import *
 import random
 import numpy as np
@@ -24,6 +23,8 @@ class C(BaseConstants):
     TIMEOUT_SEC = 60*2
     TIMEOUT_SEC_L = 60*4
     ESTIMATE_POINT = 1
+    REVIEW = [1, "1:卓越して優秀"],[2, "2:非常に優秀"],[3, "3:優良"],[4, "4:良好"],[5, "5:やや不十分"],[6, "6:不十分"]
+    
 
 
 class Subsession(BaseSubsession):
@@ -109,108 +110,108 @@ class Player(BasePlayer):
         choices=[n for n in range(C.ENDOWMENT_RED + C.ENDOWMENT_BLACK +1)]
     )
     estimate = models.IntegerField(
-        label="他参加者4人の平均貢献額の予測を入力してください。", 
+        label="他参加者 4人の平均貢献額の予測を入力してください。", 
         choices=[n for n in range(0,21)]
     )
     ex_ante1 = models.IntegerField(
-        label="P1に対する評価を入力してください", 
-        choices=[n+1 for n in range(6)],
+        label="参加者 1", 
+        choices=C.REVIEW,
         widget=widgets.RadioSelectHorizontal
     )
     ex_ante2 = models.IntegerField(
-        label="P2に対する評価を入力してください", 
-        choices=[n+1 for n in range(6)],
+        label="参加者 2", 
+        choices=C.REVIEW,
         widget=widgets.RadioSelectHorizontal
     )
     ex_ante3 = models.IntegerField(
-        label="P3に対する評価を入力してください", 
-        choices=[n+1 for n in range(6)],
+        label="参加者 3", 
+        choices=C.REVIEW,
         widget=widgets.RadioSelectHorizontal
     )
     ex_ante4 = models.IntegerField(
-        label="P4に対する評価を入力してください", 
-        choices=[n+1 for n in range(6)],
+        label="参加者 4", 
+        choices=C.REVIEW,
         widget=widgets.RadioSelectHorizontal
     )
     ex_ante5 = models.IntegerField(
-        label="P5に対する評価を入力してください", 
-        choices=[n+1 for n in range(6)],
+        label="参加者 5", 
+        choices=C.REVIEW,
         widget=widgets.RadioSelectHorizontal
     )
 
     first_contribution_red = models.IntegerField(
-        label="1回目の赤のチップの貢献量を入力してください", 
+        label=" 1回目の赤のチップの貢献量を入力してください", 
         choices=[n for n in range(C.ENDOWMENT_RED +1)], 
         initial=0
     )
     first_contribution_black = models.IntegerField(
-        label="1回目の黒のチップの貢献量を入力してください", 
+        label=" 1回目の黒のチップの貢献量を入力してください", 
         choices=[n for n in range(C.ENDOWMENT_BLACK +1)],
         initial=0
     )
     
 
     mid_term1 = models.IntegerField(
-        label="P1に対する評価を入力してください", 
-        choices=[n+1 for n in range(6)],
+        label="参加者 1", 
+        choices=C.REVIEW,
         widget=widgets.RadioSelectHorizontal
     )
     mid_term2 = models.IntegerField(
-        label="P2に対する評価を入力してください", 
-        choices=[n+1 for n in range(6)],
+        label="参加者 2", 
+        choices=C.REVIEW,
         widget=widgets.RadioSelectHorizontal
     )
     mid_term3 = models.IntegerField(
-        label="P3に対する評価を入力してください", 
-        choices=[n+1 for n in range(6)],
+        label="参加者 3", 
+        choices=C.REVIEW,
         widget=widgets.RadioSelectHorizontal
     )
     mid_term4 = models.IntegerField(
-        label="P4に対する評価を入力してください", 
-        choices=[n+1 for n in range(6)],
+        label="参加者 4", 
+        choices=C.REVIEW,
         widget=widgets.RadioSelectHorizontal
     )
     mid_term5 = models.IntegerField(
-        label="P5に対する評価を入力してください", 
-        choices=[n+1 for n in range(6)],
+        label="参加者 5", 
+        choices=C.REVIEW,
         widget=widgets.RadioSelectHorizontal
     )    
 
     second_contribution_red = models.IntegerField(
-        label="2回目の赤のチップの貢献量を入力してください", 
+        label=" 2回目の赤のチップの貢献量を入力してください", 
         choices=[n for n in range(C.ENDOWMENT_RED +1)], 
         initial=0
     )
     second_contribution_black = models.IntegerField(
-        label="2回目の黒のチップの貢献量を入力してください", 
+        label=" 2回目の黒のチップの貢献量を入力してください", 
         choices=[n for n in range(C.ENDOWMENT_BLACK +1)], 
         initial=0
     )
     avg_contribution = models.FloatField(initial=0)
 
     ex_post1 = models.IntegerField(
-        label="P1に対する評価を入力してください", 
-        choices=[n+1 for n in range(6)],
+        label="参加者 1", 
+        choices=C.REVIEW,
         widget=widgets.RadioSelectHorizontal
     )
     ex_post2 = models.IntegerField(
-        label="P2に対する評価を入力してください", 
-        choices=[n+1 for n in range(6)],
+        label="参加者 2", 
+        choices=C.REVIEW,
         widget=widgets.RadioSelectHorizontal
     )
     ex_post3 = models.IntegerField(
-        label="P3に対する評価を入力してください", 
-        choices=[n+1 for n in range(6)],
+        label="参加者 3", 
+        choices=C.REVIEW,
         widget=widgets.RadioSelectHorizontal
     )
     ex_post4 = models.IntegerField(
-        label="P4に対する評価を入力してください", 
-        choices=[n+1 for n in range(6)],
+        label="参加者 4", 
+        choices=C.REVIEW,
         widget=widgets.RadioSelectHorizontal
     )
     ex_post5 = models.IntegerField(
-        label="P5に対する評価を入力してください", 
-        choices=[n+1 for n in range(6)],
+        label="参加者 5", 
+        choices=C.REVIEW,
         widget=widgets.RadioSelectHorizontal
     )    
 
@@ -382,13 +383,12 @@ class FpledgeWaitPage(WaitPage):
 class estimate_ex_ante_review(Page):
     form_model = "player"
     form_fields = ["ex_ante1", "ex_ante2", "ex_ante3", "ex_ante4", "ex_ante5", "estimate"]
-    # 後から推測は計算する
     @staticmethod
     def get_timeout_seconds(player):
         if player.Pis_dropout:
             return 1  # instant timeout, 1 second
         else:
-            return C.TIMEOUT_SEC_L
+            return C.TIMEOUT_SEC
 
     @staticmethod
     def before_next_page(player, timeout_happened):
@@ -446,7 +446,7 @@ class fcontribution_mid_term_review(Page):
         if player.Pis_dropout:
             return 1  # instant timeout, 1 second
         else:
-            return C.TIMEOUT_SEC_L
+            return C.TIMEOUT_SEC
 
     @staticmethod
     def before_next_page(player, timeout_happened):
@@ -493,11 +493,11 @@ class mid_term_scontribution(Page):
             participant.is_dropout = player.Pis_dropout
     @staticmethod    
     def error_message(player, values):
-        if values["second_contribution_red"] + player.first_contribution_red > C.ENDOWMENT_RED:
-            return "貢献の合計が所持している赤のチップの枚数を超えています"
-        elif values["second_contribution_black"] + player.first_contribution_black > C.ENDOWMENT_BLACK:
-            return "貢献の合計が所持している黒のチップの枚数を超えています"
-
+        if values["second_contribution_red"] + player.first_contribution_red >= C.ENDOWMENT_RED +1:
+            return "所持している赤のチップの枚数を超えています"
+        elif values["second_contribution_black"] + player.first_contribution_black >= C.ENDOWMENT_BLACK+1:
+            return "所持している黒のチップの枚数を超えています"
+        #この+1と>=がないと動かない(なぜ？)
 
 class ScontributionWaitPage(WaitPage):
     after_all_players_arrive = set_Second_contribution
@@ -510,7 +510,7 @@ class scontribution_ex_post_review(Page):
         if player.Pis_dropout:
             return 1  # instant timeout, 1 second
         else:
-            return C.TIMEOUT_SEC_L
+            return C.TIMEOUT_SEC
 
     @staticmethod
     def before_next_page(player, timeout_happened):

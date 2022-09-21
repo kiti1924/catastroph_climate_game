@@ -4,24 +4,25 @@
 
 {{ block content }}
 <details>
-    <summary><strong>実験ゲームの説明</strong></summary>
+    <summary><strong><font size="5" color="blue">実験ゲームの説明</font></strong></summary>
     {{ include C.INSTRUCTIONS_TEMPLATE }}
 </details>
-<p>ホイールの結果は{{  C.THRESHOLD  }}です。</p>
-    {{  if C.THRESHOLD > player.participant.Final_CONTRIBUTION  }}
-    <p>グループの全員が20ポイントの損失を受けます。</p>
-    {{  else  }}
-    <p>したがって、グループは損失を受けませんでした。</p>
-    {{  endif  }}
-    <p>あなたが現在所持しているのは、{{  player.participant.Final_BLACK  }}枚の黒のチップと{{  player.participant.Final_RED  }}枚の赤のチップと{{  C.ENDOWMENT_FUND  }}単位の基金です。</p>
-    <p>黒のチップは{{  C.MULTIPLIER_BLACK  }}ポイント、赤のチップは{{  C.MULTIPLIER  }}ポイント、基金は1ポイントに換算されます。</p>
-    <p>これに加えて、グループ全体での貢献1枚につき{{  C.MULTIPLIER  }}ポイントが獲得できます。</p>
-    {{  if participant.hit_estimate  }}
-    <p>また、あなたは推測に的中したので、加えて{{  C.ESTIMATE_POINT  }}ポイントを獲得しています。</p>
-    {{  else  }}
-    {{  endif  }}
-    <p>グループ全体の貢献は、{{  player.participant.Final_CONTRIBUTION  }}でしたので、これらを計算して、</p>
-    <p>したがって、{{  player.participant.Final_REWARD  }}があなたの報酬として受け取るポイントです。</p>
+<p>参加者 {{  player.id_in_group  }}さん<br>
+    ホイールの結果は{{  C.THRESHOLD  }}です。<br>
+        {{  if C.THRESHOLD > player.participant.Final_CONTRIBUTION  }}
+            グループの全員が20ポイントの損失を受けます。</p>
+        {{  else  }}
+            したがって、グループは損失を受けませんでした。</p>
+        {{  endif  }}
+    <p>あなたが現在所持しているのは、{{  player.participant.Final_BLACK  }}枚の黒のチップと{{  player.participant.Final_RED  }}枚の赤のチップと{{  C.ENDOWMENT_FUND  }}単位の基金です。<br>
+        黒のチップは{{  C.MULTIPLIER_BLACK  }}ポイント、赤のチップは{{  C.MULTIPLIER  }}ポイント、基金は1ポイントに換算されます。<br>
+        さらに、グループ全体の貢献1枚につき{{  C.MULTIPLIER  }}ポイントが獲得できます。<br>
+        {{  if participant.hit_estimate  }}
+            また、あなたは推測に的中したので、加えて{{  C.ESTIMATE_POINT  }}ポイントを獲得しています。<br>
+        {{  else  }}
+        {{  endif  }}
+        グループ全体の貢献は、{{  player.participant.Final_CONTRIBUTION  }}のため、これらを計算して、<br>
+        {{  player.participant.Final_REWARD  }}があなたの受け取るポイントです。</p>
 
 <br>
 <p>最後に、簡単なアンケートにご協力ください。</p>

@@ -5,7 +5,7 @@
 
 {{ block content }}
 <details>
-    <summary><strong>実験ゲームの説明</strong></summary>
+    <summary><strong><font size="5" color="blue">実験ゲームの説明</font></strong></summary>
     {{ include C.INSTRUCTIONS_TEMPLATE }}
 </details>
 <p>採択された全体目標は{{  group.Target  }}です。</p>
@@ -18,6 +18,14 @@
         <th>参加者3</th>
         <th>参加者4</th>
         <th>参加者5</th>
+    </tr>
+    <tr>
+        <td>誓約した貢献額</td>
+        <td>{{  group.fpledge1  }}</td>
+        <td>{{  group.fpledge2  }}</td>
+        <td>{{  group.fpledge3  }}</td>
+        <td>{{  group.fpledge4  }}</td>
+        <td>{{  group.fpledge5  }}</td>
     </tr>
     <tr>
         <td>貢献した赤のチップの枚数</td>
@@ -36,11 +44,11 @@
         <td>{{  group.fcontribution5_black  }}</td>
     </tr>
 </table>
-<p>したがって、{{  group.Fcontribution  }}が現在のグループの合計貢献です。</p>
-<p>この場合の損失発生の可能性は{{  group.prob_Fcontribution  }}%です。</p>
+<p>参加者 {{  player.id_in_group  }}さん<br>
+    1回目の貢献の結果、{{  group.Fcontribution  }}が現在の合計貢献となりました。<br>
+    この場合の損失発生の可能性は{{  group.prob_Fcontribution  }}%です。</p>
 
-<p>続いて、各参加者の1度目の<b>貢献</b>に対する評価を指定してください。</p>
-<p><b>1：卓越して優秀, 2：非常に優秀, 3：優良, 4：良好, 5：やや不十分, 6：不十分</b></p>
+<p>続いて、各参加者に対する評価を指定してください。</p>
 {{ formfields }}
 {{ next_button }}
 {{ endblock }}
