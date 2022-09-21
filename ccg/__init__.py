@@ -1,4 +1,3 @@
-from re import A
 from otree.api import *
 import random
 import numpy as np
@@ -387,7 +386,7 @@ class estimate_ex_ante_review(Page):
         if player.Pis_dropout:
             return 1  # instant timeout, 1 second
         else:
-            return C.TIMEOUT_SEC_L
+            return C.TIMEOUT_SEC
 
     @staticmethod
     def before_next_page(player, timeout_happened):
@@ -445,7 +444,7 @@ class fcontribution_mid_term_review(Page):
         if player.Pis_dropout:
             return 1  # instant timeout, 1 second
         else:
-            return C.TIMEOUT_SEC_L
+            return C.TIMEOUT_SEC
 
     @staticmethod
     def before_next_page(player, timeout_happened):
@@ -493,9 +492,9 @@ class mid_term_scontribution(Page):
     @staticmethod    
     def error_message(player, values):
         if values["second_contribution_red"] + player.first_contribution_red >= C.ENDOWMENT_RED +1:
-            return "貢献の合計が所持している赤のチップの枚数を超えています"
+            return "所持している赤のチップの枚数を超えています"
         elif values["second_contribution_black"] + player.first_contribution_black >= C.ENDOWMENT_BLACK+1:
-            return "貢献の合計が所持している黒のチップの枚数を超えています"
+            return "所持している黒のチップの枚数を超えています"
         #この+1と>=がないと動かない(なぜ？)
 
 class ScontributionWaitPage(WaitPage):
@@ -509,7 +508,7 @@ class scontribution_ex_post_review(Page):
         if player.Pis_dropout:
             return 1  # instant timeout, 1 second
         else:
-            return C.TIMEOUT_SEC_L
+            return C.TIMEOUT_SEC
 
     @staticmethod
     def before_next_page(player, timeout_happened):
