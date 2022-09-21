@@ -3,7 +3,7 @@
 
 ## 概要
 
-このプロジェクトはChen氏らによって開発された"OTree 5.11.0b2"(Chen et al., 2016)を使用しています。
+このプロジェクトはChen氏らによって開発された"oTree 5.11.0b2"(Chen et al., 2016)を使用しています。
 
 Barrett氏、Dannenberg氏によって行われた公共財ゲーム(Barrett and Dannenberg, 2016)の日本語版として開発されています。
 
