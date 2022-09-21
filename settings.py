@@ -48,7 +48,7 @@ ROOMS = [
 # e.g. self.session.config['participation_fee']
 
 SESSION_CONFIG_DEFAULTS = dict(
-    real_world_currency_per_point=5.00, participation_fee=0.00, doc=""
+    real_world_currency_per_point=10.00, participation_fee=0.00, doc=""
 )
 
 PARTICIPANT_FIELDS = ["is_dropout", "Final_BLACK", "Final_RED", "Final_CONTRIBUTION", "Final_REWARD", "Final_REWARD_JPY", "hit_estimate"]
