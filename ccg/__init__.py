@@ -109,107 +109,107 @@ class Player(BasePlayer):
         choices=[n for n in range(C.ENDOWMENT_RED + C.ENDOWMENT_BLACK +1)]
     )
     estimate = models.IntegerField(
-        label="他参加者4人の平均貢献額の予測を入力してください。", 
+        label="他参加者 4人の平均貢献額の予測を入力してください。", 
         choices=[n for n in range(0,21)]
     )
     ex_ante1 = models.IntegerField(
-        label="P1に対する評価を入力してください", 
+        label="参加者 1に対する評価を入力してください", 
         choices=[n+1 for n in range(6)],
         widget=widgets.RadioSelectHorizontal
     )
     ex_ante2 = models.IntegerField(
-        label="P2に対する評価を入力してください", 
+        label="参加者 2に対する評価を入力してください", 
         choices=[n+1 for n in range(6)],
         widget=widgets.RadioSelectHorizontal
     )
     ex_ante3 = models.IntegerField(
-        label="P3に対する評価を入力してください", 
+        label="参加者 3に対する評価を入力してください", 
         choices=[n+1 for n in range(6)],
         widget=widgets.RadioSelectHorizontal
     )
     ex_ante4 = models.IntegerField(
-        label="P4に対する評価を入力してください", 
+        label="参加者 4に対する評価を入力してください", 
         choices=[n+1 for n in range(6)],
         widget=widgets.RadioSelectHorizontal
     )
     ex_ante5 = models.IntegerField(
-        label="P5に対する評価を入力してください", 
+        label="参加者 5に対する評価を入力してください", 
         choices=[n+1 for n in range(6)],
         widget=widgets.RadioSelectHorizontal
     )
 
     first_contribution_red = models.IntegerField(
-        label="1回目の赤のチップの貢献量を入力してください", 
+        label=" 1回目の赤のチップの貢献量を入力してください", 
         choices=[n for n in range(C.ENDOWMENT_RED +1)], 
         initial=0
     )
     first_contribution_black = models.IntegerField(
-        label="1回目の黒のチップの貢献量を入力してください", 
+        label=" 1回目の黒のチップの貢献量を入力してください", 
         choices=[n for n in range(C.ENDOWMENT_BLACK +1)],
         initial=0
     )
     
 
     mid_term1 = models.IntegerField(
-        label="P1に対する評価を入力してください", 
+        label="参加者 1に対する評価を入力してください", 
         choices=[n+1 for n in range(6)],
         widget=widgets.RadioSelectHorizontal
     )
     mid_term2 = models.IntegerField(
-        label="P2に対する評価を入力してください", 
+        label="参加者 2に対する評価を入力してください", 
         choices=[n+1 for n in range(6)],
         widget=widgets.RadioSelectHorizontal
     )
     mid_term3 = models.IntegerField(
-        label="P3に対する評価を入力してください", 
+        label="参加者 3に対する評価を入力してください", 
         choices=[n+1 for n in range(6)],
         widget=widgets.RadioSelectHorizontal
     )
     mid_term4 = models.IntegerField(
-        label="P4に対する評価を入力してください", 
+        label="参加者 4に対する評価を入力してください", 
         choices=[n+1 for n in range(6)],
         widget=widgets.RadioSelectHorizontal
     )
     mid_term5 = models.IntegerField(
-        label="P5に対する評価を入力してください", 
+        label="参加者 5に対する評価を入力してください", 
         choices=[n+1 for n in range(6)],
         widget=widgets.RadioSelectHorizontal
     )    
 
     second_contribution_red = models.IntegerField(
-        label="2回目の赤のチップの貢献量を入力してください", 
+        label=" 2回目の赤のチップの貢献量を入力してください", 
         choices=[n for n in range(C.ENDOWMENT_RED +1)], 
         initial=0
     )
     second_contribution_black = models.IntegerField(
-        label="2回目の黒のチップの貢献量を入力してください", 
+        label=" 2回目の黒のチップの貢献量を入力してください", 
         choices=[n for n in range(C.ENDOWMENT_BLACK +1)], 
         initial=0
     )
     avg_contribution = models.FloatField(initial=0)
 
     ex_post1 = models.IntegerField(
-        label="P1に対する評価を入力してください", 
+        label="参加者 1に対する評価を入力してください", 
         choices=[n+1 for n in range(6)],
         widget=widgets.RadioSelectHorizontal
     )
     ex_post2 = models.IntegerField(
-        label="P2に対する評価を入力してください", 
+        label="参加者 2に対する評価を入力してください", 
         choices=[n+1 for n in range(6)],
         widget=widgets.RadioSelectHorizontal
     )
     ex_post3 = models.IntegerField(
-        label="P3に対する評価を入力してください", 
+        label="参加者 3に対する評価を入力してください", 
         choices=[n+1 for n in range(6)],
         widget=widgets.RadioSelectHorizontal
     )
     ex_post4 = models.IntegerField(
-        label="P4に対する評価を入力してください", 
+        label="参加者 4に対する評価を入力してください", 
         choices=[n+1 for n in range(6)],
         widget=widgets.RadioSelectHorizontal
     )
     ex_post5 = models.IntegerField(
-        label="P5に対する評価を入力してください", 
+        label="参加者 5に対する評価を入力してください", 
         choices=[n+1 for n in range(6)],
         widget=widgets.RadioSelectHorizontal
     )    

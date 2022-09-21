@@ -20,12 +20,12 @@
         <th>参加者5</th>
     </tr>
     <tr>
-        <td>受けた評価の平均値</td>
-        <td>{{  group.Expost1  }}</td>
-        <td>{{  group.Expost2  }}</td>
-        <td>{{  group.Expost3  }}</td>
-        <td>{{  group.Expost4  }}</td>
-        <td>{{  group.Expost5  }}</td>
+        <td>誓約した貢献額</td>
+        <td>{{  group.fpledge1  }}</td>
+        <td>{{  group.fpledge2  }}</td>
+        <td>{{  group.fpledge3  }}</td>
+        <td>{{  group.fpledge4  }}</td>
+        <td>{{  group.fpledge5  }}</td>
     </tr>
     <tr>
         <td>1回目に貢献した赤のチップの枚数</td>
@@ -67,18 +67,28 @@
         <td>{{  group.contribution4  }}</td>
         <td>{{  group.contribution5  }}</td>
     </tr>
+    <tr>
+        <td>受けた評価の平均値</td>
+        <td>{{  group.Expost1  }}</td>
+        <td>{{  group.Expost2  }}</td>
+        <td>{{  group.Expost3  }}</td>
+        <td>{{  group.Expost4  }}</td>
+        <td>{{  group.Expost5  }}</td>
+    </tr>
 </table>
-<p>評価の結果は以上の通りです。</p>
-<p>評価の最大値は{{  Expost_MAX  }}、最小値は{{  Expost_min  }}でした。</p>
-<p>また、あなたが行った他参加者の平均貢献額の推定は{{  player.estimate  }}でしたが、</p>
-<p>実際の他参加者の平均貢献額は{{  player.avg_contribution  }}でした。</p>
+
+<p>参加者 {{  player.id_in_group  }}さん<br>
+    評価の結果は以上のようになりました。
+    評価の最大値は{{  Expost_MAX  }}、最小値は{{  Expost_min  }}です。</p>
+<p>あなたが行った他参加者の貢献の平均値の推定は{{  player.estimate  }}でしたが、<br>
+    実際の他参加者の平均貢献額は{{  player.avg_contribution  }}でした。<br>
 {{  if participant.hit_estimate  }}
-    <p>あなたの推測は的中しました。</p>
+    あなたの推測は的中しました。</p>
 {{  else  }}
-    <p>あなたは不的中でした。</p>
+    あなたは不的中でした。</p>
 {{  endif  }}
-<p>次がゲームの最終ステップです。</p>
-<p>最後にホイールでの損失発生の決定を行います。</p></p>
+<p>次がゲームの最終ステップです。<br>
+    ホイールでのしきい値の決定を行います。</p>
 
 {{ next_button }}
 {{ endblock }}

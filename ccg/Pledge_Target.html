@@ -8,6 +8,8 @@
         <summary><strong><font size="5" color="blue">実験ゲームの説明</font></strong></summary>
         {{ include C.INSTRUCTIONS_TEMPLATE }}
     </details>
+    <p>あなたは参加者 {{  player.id_in_group  }}です。</p>
+    
     {{ formfields }}
     {{ next_button }}
 {{ endblock }}

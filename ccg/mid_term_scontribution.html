@@ -20,12 +20,12 @@
         <th>参加者5</th>
     </tr>
     <tr>
-        <td>受けた評価の平均値</td>
-        <td>{{  group.Midterm1  }}</td>
-        <td>{{  group.Midterm2  }}</td>
-        <td>{{  group.Midterm3  }}</td>
-        <td>{{  group.Midterm4  }}</td>
-        <td>{{  group.Midterm5  }}</td>
+        <td>誓約した貢献額</td>
+        <td>{{  group.fpledge1  }}</td>
+        <td>{{  group.fpledge2  }}</td>
+        <td>{{  group.fpledge3  }}</td>
+        <td>{{  group.fpledge4  }}</td>
+        <td>{{  group.fpledge5  }}</td>
     </tr>
     <tr>
         <td>既に貢献した赤のチップの枚数</td>
@@ -43,12 +43,21 @@
         <td>{{  group.fcontribution4_black  }}</td>
         <td>{{  group.fcontribution5_black  }}</td>
     </tr>
+    <tr>
+        <td>受けた評価の平均値</td>
+        <td>{{  group.Midterm1  }}</td>
+        <td>{{  group.Midterm2  }}</td>
+        <td>{{  group.Midterm3  }}</td>
+        <td>{{  group.Midterm4  }}</td>
+        <td>{{  group.Midterm5  }}</td>
+    </tr>
 </table>
-<p>評価の結果は以上の通りです。</p>
-<p>評価の最大値は{{  Midterm_MAX  }}、最小値は{{  Midterm_min  }}でした。</p>
+<p>参加者 {{  player.id_in_group  }}さん<br>
+    評価の結果は以上のようになりました。<br>
+    評価の最大値は{{  Midterm_MAX  }}、最小値は{{  Midterm_min  }}です。</p>
 
-<p>続いて、2回目に<b>貢献</b>する値を指定してください。</p>
-<p>※誓約に従う必要はありませんが、<b>貢献</b>した量は<b>全員に公開</b>され、評価されます。</p>
+<p>続いて、2回目に<b>貢献</b>する値を指定してください。<br>
+    誓約に従う必要はありませんが、貢献した値は<b>全員に公開</b>され、評価されます。</p>
 
 {{ formfields }}
 {{ next_button }}
