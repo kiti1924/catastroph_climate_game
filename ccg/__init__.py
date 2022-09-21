@@ -114,27 +114,27 @@ class Player(BasePlayer):
         choices=[n for n in range(0,21)]
     )
     ex_ante1 = models.IntegerField(
-        label="参加者 1に対する評価を入力してください", 
+        label="参加者 1", 
         choices=C.REVIEW,
         widget=widgets.RadioSelectHorizontal
     )
     ex_ante2 = models.IntegerField(
-        label="参加者 2に対する評価を入力してください", 
+        label="参加者 2", 
         choices=C.REVIEW,
         widget=widgets.RadioSelectHorizontal
     )
     ex_ante3 = models.IntegerField(
-        label="参加者 3に対する評価を入力してください", 
+        label="参加者 3", 
         choices=C.REVIEW,
         widget=widgets.RadioSelectHorizontal
     )
     ex_ante4 = models.IntegerField(
-        label="参加者 4に対する評価を入力してください", 
+        label="参加者 4", 
         choices=C.REVIEW,
         widget=widgets.RadioSelectHorizontal
     )
     ex_ante5 = models.IntegerField(
-        label="参加者 5に対する評価を入力してください", 
+        label="参加者 5", 
         choices=C.REVIEW,
         widget=widgets.RadioSelectHorizontal
     )
@@ -152,27 +152,27 @@ class Player(BasePlayer):
     
 
     mid_term1 = models.IntegerField(
-        label="参加者 1に対する評価を入力してください", 
+        label="参加者 1", 
         choices=C.REVIEW,
         widget=widgets.RadioSelectHorizontal
     )
     mid_term2 = models.IntegerField(
-        label="参加者 2に対する評価を入力してください", 
+        label="参加者 2", 
         choices=C.REVIEW,
         widget=widgets.RadioSelectHorizontal
     )
     mid_term3 = models.IntegerField(
-        label="参加者 3に対する評価を入力してください", 
+        label="参加者 3", 
         choices=C.REVIEW,
         widget=widgets.RadioSelectHorizontal
     )
     mid_term4 = models.IntegerField(
-        label="参加者 4に対する評価を入力してください", 
+        label="参加者 4", 
         choices=C.REVIEW,
         widget=widgets.RadioSelectHorizontal
     )
     mid_term5 = models.IntegerField(
-        label="参加者 5に対する評価を入力してください", 
+        label="参加者 5", 
         choices=C.REVIEW,
         widget=widgets.RadioSelectHorizontal
     )    
@@ -190,27 +190,27 @@ class Player(BasePlayer):
     avg_contribution = models.FloatField(initial=0)
 
     ex_post1 = models.IntegerField(
-        label="参加者 1に対する評価を入力してください", 
+        label="参加者 1", 
         choices=C.REVIEW,
         widget=widgets.RadioSelectHorizontal
     )
     ex_post2 = models.IntegerField(
-        label="参加者 2に対する評価を入力してください", 
+        label="参加者 2", 
         choices=C.REVIEW,
         widget=widgets.RadioSelectHorizontal
     )
     ex_post3 = models.IntegerField(
-        label="参加者 3に対する評価を入力してください", 
+        label="参加者 3", 
         choices=C.REVIEW,
         widget=widgets.RadioSelectHorizontal
     )
     ex_post4 = models.IntegerField(
-        label="参加者 4に対する評価を入力してください", 
+        label="参加者 4", 
         choices=C.REVIEW,
         widget=widgets.RadioSelectHorizontal
     )
     ex_post5 = models.IntegerField(
-        label="参加者 5に対する評価を入力してください", 
+        label="参加者 5", 
         choices=C.REVIEW,
         widget=widgets.RadioSelectHorizontal
     )    
