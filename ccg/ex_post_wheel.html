@@ -78,17 +78,17 @@
 </table>
 
 <p>参加者 {{  player.id_in_group  }}さん<br>
-    評価の結果は以上のようになりました。
+    評価の結果は以上のようになりました。<br>
+    <b>1：卓越して優秀, 2：非常に優秀, 3：優良, 4：良好, 5：やや不十分, 6：不十分</b><br>
     評価の最大値は{{  Expost_MAX  }}、最小値は{{  Expost_min  }}です。</p>
 <p>あなたが行った他参加者の貢献の平均値の推定は{{  player.estimate  }}でしたが、<br>
-    実際の他参加者の平均貢献額は{{  player.avg_contribution  }}でした。<br>
+    他参加者の平均貢献額は最終的に{{  player.avg_contribution  }}でした。<br>
 {{  if participant.hit_estimate  }}
     あなたの推測は的中しました。</p>
 {{  else  }}
-    あなたは不的中でした。</p>
+    あなたは不的中です。</p>
 {{  endif  }}
-<p>次がゲームの最終ステップです。<br>
-    ホイールでのしきい値の決定を行います。</p>
+<p>ゲームの最終ステップとして、ホイールでのしきい値の決定を行います。</p>
 
 {{ next_button }}
 {{ endblock }}

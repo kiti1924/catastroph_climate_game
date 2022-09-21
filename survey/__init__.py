@@ -1,10 +1,11 @@
 from otree.api import *
-
+import random
 
 class C(BaseConstants):
     NAME_IN_URL = 'survey'
     PLAYERS_PER_GROUP = None
     NUM_ROUNDS = 1
+    # materials_crt=['crt_bat', 'crt_widget', 'crt_lake']
 
 
 class Subsession(BaseSubsession):
@@ -22,19 +23,34 @@ class Player(BasePlayer):
         label='性別を教えてください',
         widget=widgets.RadioSelect,
     )
+    device = models.StringField(
+        choices=[[1, 'スマートフォン'], [2, 'タブレット端末'], [3, "パソコン"],[4, "その他"]],
+        label='参加した端末を教えてください',
+        widget=widgets.RadioSelect,
+    )
+    social = models.StringField(
+        choices=[[1, 'していない'], [2, 'どちらかといえばしていない'], [3, "どちらかといえばしている"],[4, "している"],[5,"よくしている"]],
+        label='普段、ボランティアやゴミ拾いなど地域や社会のための行動をしていますか',
+        widget=widgets.RadioSelect,
+    )
+    social_satisfaction = models.StringField(
+        choices = [[1, "全く満足していない"],[2, "あまり満足していない"],[3, "どちらともいえない"],[4, "満足している"],[5, "非常に満足している"]],
+        label='現在の暮らしに満足していますか？',
+        widget=widgets.RadioSelect,
+    )
     pd = models.StringField(
-        choices=[['はい', 'はい'], ['いいえ', 'いいえ']],
+        choices=[[1, 'はい'], [2, 'いいえ']],
         label='「ゲーム理論」、あるいは「囚人のジレンマ」を知っていますか？',
         widget=widgets.RadioSelect,
     )
     satisfaction = models.StringField(
         choices = [[1, "全く満足していない"],[2, "あまり満足していない"],[3, "どちらともいえない"],[4, "満足している"],[5, "非常に満足している"]],
-        label='他の参加者の行動に満足していますか？',
+        label='<p>以下はゲーム内についての質問です。</p>他の参加者の行動に満足していますか？',
         widget=widgets.RadioSelect,
     )
     enough = models.StringField(
         choices = [[1, "不十分だった"],[2, "少し不十分だった"],[3, "普通だった"],[4, "それなりであった"],[5, "十分であった"]],
-        label='実験における自らのグループへの貢献は十分だったと考えていますか？',
+        label='自らの貢献は十分だったと考えていますか？',
         widget=widgets.RadioSelect,
     )
 
@@ -77,6 +93,11 @@ class dropout(Page):
 class CognitiveReflectionTest(Page):
     form_model = 'player'
     form_fields = ['crt_bat', 'crt_widget', 'crt_lake']
+    # @staticmethod
+    # def get_form_fields(player: Player):
+    #     list_crt = [*C.materials_crt["items"].keys()]
+    #     new_list_crt = random.sample(list_crt, len(list_crt))
+    #     return new_list_crt
 
     @staticmethod
     def vars_for_template(player):
@@ -86,7 +107,7 @@ class CognitiveReflectionTest(Page):
 
 class Demographics(Page):
     form_model = 'player'
-    form_fields = ['age', 'gender',"pd","satisfaction","enough","check","free"]
+    form_fields = ['age', 'gender', "device", "social", "social_satisfaction", "pd","satisfaction","enough","check","free"]
  
 
 page_sequence = [dropout, CognitiveReflectionTest, Demographics]

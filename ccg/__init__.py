@@ -23,6 +23,8 @@ class C(BaseConstants):
     TIMEOUT_SEC = 60*2
     TIMEOUT_SEC_L = 60*4
     ESTIMATE_POINT = 1
+    REVIEW = [1, "1:卓越して優秀"],[2, "2:非常に優秀"],[3, "3:優良"],[4, "4:良好"],[5, "5:やや不十分"],[6, "6:不十分"]
+    
 
 
 class Subsession(BaseSubsession):
@@ -113,27 +115,27 @@ class Player(BasePlayer):
     )
     ex_ante1 = models.IntegerField(
         label="参加者 1に対する評価を入力してください", 
-        choices=[n+1 for n in range(6)],
+        choices=C.REVIEW,
         widget=widgets.RadioSelectHorizontal
     )
     ex_ante2 = models.IntegerField(
         label="参加者 2に対する評価を入力してください", 
-        choices=[n+1 for n in range(6)],
+        choices=C.REVIEW,
         widget=widgets.RadioSelectHorizontal
     )
     ex_ante3 = models.IntegerField(
         label="参加者 3に対する評価を入力してください", 
-        choices=[n+1 for n in range(6)],
+        choices=C.REVIEW,
         widget=widgets.RadioSelectHorizontal
     )
     ex_ante4 = models.IntegerField(
         label="参加者 4に対する評価を入力してください", 
-        choices=[n+1 for n in range(6)],
+        choices=C.REVIEW,
         widget=widgets.RadioSelectHorizontal
     )
     ex_ante5 = models.IntegerField(
         label="参加者 5に対する評価を入力してください", 
-        choices=[n+1 for n in range(6)],
+        choices=C.REVIEW,
         widget=widgets.RadioSelectHorizontal
     )
 
@@ -151,27 +153,27 @@ class Player(BasePlayer):
 
     mid_term1 = models.IntegerField(
         label="参加者 1に対する評価を入力してください", 
-        choices=[n+1 for n in range(6)],
+        choices=C.REVIEW,
         widget=widgets.RadioSelectHorizontal
     )
     mid_term2 = models.IntegerField(
         label="参加者 2に対する評価を入力してください", 
-        choices=[n+1 for n in range(6)],
+        choices=C.REVIEW,
         widget=widgets.RadioSelectHorizontal
     )
     mid_term3 = models.IntegerField(
         label="参加者 3に対する評価を入力してください", 
-        choices=[n+1 for n in range(6)],
+        choices=C.REVIEW,
         widget=widgets.RadioSelectHorizontal
     )
     mid_term4 = models.IntegerField(
         label="参加者 4に対する評価を入力してください", 
-        choices=[n+1 for n in range(6)],
+        choices=C.REVIEW,
         widget=widgets.RadioSelectHorizontal
     )
     mid_term5 = models.IntegerField(
         label="参加者 5に対する評価を入力してください", 
-        choices=[n+1 for n in range(6)],
+        choices=C.REVIEW,
         widget=widgets.RadioSelectHorizontal
     )    
 
@@ -189,27 +191,27 @@ class Player(BasePlayer):
 
     ex_post1 = models.IntegerField(
         label="参加者 1に対する評価を入力してください", 
-        choices=[n+1 for n in range(6)],
+        choices=C.REVIEW,
         widget=widgets.RadioSelectHorizontal
     )
     ex_post2 = models.IntegerField(
         label="参加者 2に対する評価を入力してください", 
-        choices=[n+1 for n in range(6)],
+        choices=C.REVIEW,
         widget=widgets.RadioSelectHorizontal
     )
     ex_post3 = models.IntegerField(
         label="参加者 3に対する評価を入力してください", 
-        choices=[n+1 for n in range(6)],
+        choices=C.REVIEW,
         widget=widgets.RadioSelectHorizontal
     )
     ex_post4 = models.IntegerField(
         label="参加者 4に対する評価を入力してください", 
-        choices=[n+1 for n in range(6)],
+        choices=C.REVIEW,
         widget=widgets.RadioSelectHorizontal
     )
     ex_post5 = models.IntegerField(
         label="参加者 5に対する評価を入力してください", 
-        choices=[n+1 for n in range(6)],
+        choices=C.REVIEW,
         widget=widgets.RadioSelectHorizontal
     )    
 
