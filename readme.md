@@ -13,7 +13,6 @@ Barrett氏、Dannenberg氏によって行われた公共財ゲーム(Barrett and
 
 tutorialとccgがゲームの主部分であり、surveyとpayment_infoは調査および報酬の提示のために用意されています。
 
-一部言葉不正確な部分がありますので、変更しつつ使用してください。
 
 
 ## 引用
